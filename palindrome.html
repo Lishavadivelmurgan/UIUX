@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+
+</head>
+<body>
+    <h1>Palindrome  Checker</h1>
+    <label>Enter a value:</label>
+    <input type="text" id="number" placeholder="Enter a value">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result"></p>
+    <script>
+        function checkPalindrome() {
+            let num = document.getElementById('number').value;
+            let result = document.getElementById('result');
+            if (num === '') {
+                result.textContent = 'Please enter a value.';
+                return;
+            }
+            let reversedNum = num.split('').reverse().join('');
+            if (num === reversedNum) {
+                result.textContent = num + ' is a palindrome.';
+            } else {
+                result.textContent = num + ' is not a palindrome.';
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
